@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$title</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <h3>$header</h3>
+            <ul>
+                @for $i = 1; $i <= 10; $i++
+                    <li>
+                        <a href="/$i.html">$i. Link</a>
+                    </li>
+                @endfor
+            </ul>
+        </nav>
+        <nav>
+            <h3>List of items in the array "numbers" using legacy syntax</h3>
+            <ul>
+                @foreach $num in $numbers
+                    <li>
+                        Item: <strong>$num</strong>
+                    </li>
+                @endforeach
+            </ul>
+        </nav>
+        <nav>
+            <h3>List of items in the array "numbers" using PHP syntax</h3>
+            <h4>Count of numbers: count($numbers)</h4>
+            <ul>
+                @foreach $numbers as $num
+                    <li>
+                        Item: <strong>$num</strong>
+                    </li>
+                @endforeach
+            </ul>
+        </nav>
+        <div>
+            <h3>Included content:</h3>
+            <div>
+                @include 'content.html'
+            </div>
+        </div>
+        <div>
+            <h3>Arrays:</h3>
+            <div>
+                <p>Meat type: $burger['meat']</p>
+                <p>Cheese type: $burger["cheese"]</p>
+                <p>Salad? $burger[salad]</p>
+                <p>$burger[0]</p>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
